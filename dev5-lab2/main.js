@@ -1,5 +1,6 @@
 import './style.css';
 
-import Bingo from "./bingo.js";
+import Bingo from "./src/bingo";
+import Card from "./src/card";
 
 const bingo = new Bingo();

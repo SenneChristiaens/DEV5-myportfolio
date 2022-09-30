@@ -32,7 +32,7 @@ export default class Bingo {
       "Likes cilantro",
       "Is afraid of heights",
       "Loves heavy metal music",
-      "Is famous on Instagram"
+      "Is famous on Instagram",
     ];
 
     // we start by rendering the cards to the screen
@@ -48,11 +48,10 @@ export default class Bingo {
 
     // 🔥🔥🔥 TODO 2
     // loop through all the cards in the array and create a new instance of a Card()
-    // for()
-    // create a new card object
-    // let card = new Card(this.cards[i]);
-    // render the card
-    // card.render();
+    for (let i = 0; i < this.cards.length; i++) {
+      let card = new Card(this.cards[i]);
+      card.render(i);
+    }
   }
 
   static checkWinner() {
