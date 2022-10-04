@@ -74,14 +74,14 @@ export default class Bingo {
     // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
     let cardsWon = [];
     console.log("Saving bingo to localstorage");
-    let cards = document.querySelectorAll(".bingo__card--done");
+    let cardsDone = document.querySelectorAll(".bingo__card--done");
 
-    if (cards.length === 0) {
-      localStorage.removeItem("bingo");
+    if (cardsDone.length === 0) {
+      localStorage.clear();
     }
 
-    for (let i = 0; i < cards.length; i++) {
-      cardsWon.push(cards[i].dataset.number);
+    for (let i = 0; i < cardsDone.length; i++) {
+      cardsWon.push(cardsDone[i].dataset.number);
     }
     localStorage.setItem("bingo", JSON.stringify(cardsWon));
   }
@@ -95,8 +95,13 @@ export default class Bingo {
 
     // check if localstorage item exists
     if (localStorage.getItem("bingo")) {
-      // let cardsWon = JSON.parse();
-      // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
+      let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+      for (let i = 0; i < cardsWon.length; i++) {
+        let cardsDone = document.querySelector(`[data-number="${cardsWon[i]}"]`);
+        cardsDone.classList.add("bingo__card--done");
+        // console.log(cardsDone);
+        this.checkWinner();
+      }
       // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
       // .bingo__card--done
     }
