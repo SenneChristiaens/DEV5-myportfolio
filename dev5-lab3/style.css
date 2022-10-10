@@ -2,7 +2,44 @@ body, img {
   text-align: center;
   max-width: 300px;
   margin: auto;
-  padding: 3em 1em;
+  padding-top: 1em;
   font-family: 'Roboto', sans-serif;
-  border-radius: 5px;
 }
+
+h1, h2 {
+  color: #ec9baf;
+}
+
+#app {
+  display: block;
+  width: 400px;
+  background-color: #fed499;
+}
+
+.logo {
+  max-width: 35%;
+  margin: auto;
+  padding-bottom: 0;
+}
+
+.weather__icon img {
+  max-width: 40%;
+  margin: auto;
+  padding: 0;
+}
+
+.meal__title {
+  font-family: 'Courier New', sans-serif;
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.meal__image {
+padding-top: 1em;
+max-width: 400px;
+padding-left: 0;
+padding-right: 0;
+padding-bottom: 0;
+margin-bottom: 0;
+}
+
