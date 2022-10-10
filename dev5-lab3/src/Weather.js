@@ -57,8 +57,12 @@ export default class Weather {
 
     if (temp < 15) {
       this.getColdMeal();
+      const hotmeal ="Ooooh, it's cold🥶 outside. This will warm you up!";
+      document.querySelector(".meal__temp").innerHTML = hotmeal;
     } else {
       this.getHotMeal();
+      const coldmeal ="Ooooh, it's hot😎 outside. This will cool you off!";
+      document.querySelector(".meal__temp").innerHTML = coldmeal;
     }
   }
 
