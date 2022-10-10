@@ -68,22 +68,20 @@ export default class Weather {
 
   getColdMeal() {
     fetch(
-      "https://api.spoonacular.com/recipes/665307/information?apiKey=7d59a58425cc404fb8785b405e74ed0d&includeNutrition=false"
+      "https://api.spoonacular.com/recipes/665307/information?apiKey=d77d984bfea44e87bd12c1827d291ea5&includeNutrition=false"
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         this.displayMeal(data);
       });
   }
 
   getHotMeal() {
     fetch(
-      "https://api.spoonacular.com/recipes/1096207/information?apiKey=7d59a58425cc404fb8785b405e74ed0d&includeNutrition=false"
+      "https://api.spoonacular.com/recipes/1096207/information?apiKey=d77d984bfea44e87bd12c1827d291ea5&includeNutrition=false"
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         this.displayMeal(data);
       });
   }
