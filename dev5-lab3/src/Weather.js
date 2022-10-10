@@ -55,4 +55,24 @@ export default class Weather {
     img.src = icon;
     document.querySelector(".weather__icon").appendChild(img);
   }
+
+  getColdMeal() {
+    fetch(
+      "https://api.spoonacular.com/recipes/649933/information?apiKey=0bda489a00e14eb0ab0909c2d4e675d7&includeNutrition=false"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
+
+  getHotMeal() {
+    fetch(
+      "https://api.spoonacular.com/recipes/1096207/information?apiKey=0bda489a00e14eb0ab0909c2d4e675d7&includeNutrition=false"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
 }
