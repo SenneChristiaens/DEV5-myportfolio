@@ -54,6 +54,12 @@ export default class Weather {
     const img = document.createElement("img");
     img.src = icon;
     document.querySelector(".weather__icon").appendChild(img);
+
+    if (temp < 15) {
+      this.getColdMeal();
+    } else {
+      this.getHotMeal();
+    }
   }
 
   getColdMeal() {
@@ -63,6 +69,7 @@ export default class Weather {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        this.displayMeal(data);
       });
   }
 
@@ -73,6 +80,14 @@ export default class Weather {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        this.displayMeal(data);
       });
+  }
+
+  displayMeal(data) {
+    const title = data.title;
+    const image = data.image;
+    document.querySelector(".meal__title").innerHTML = title;
+    document.querySelector(".meal__image").src = image;
   }
 }
