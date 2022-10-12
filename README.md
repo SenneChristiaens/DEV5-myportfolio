@@ -13,3 +13,7 @@ Link to repository: https://github.com/SenneChristiaens/DEV5-myportfolio/tree/ma
 ## Lab 3
 
 Link to repository: https://github.com/SenneChristiaens/DEV5-myportfolio/tree/main/dev5-lab3
+
+## Lab 4
+
+Link to repository: https://github.com/SenneChristiaens/DEV5-myportfolio/tree/main/dev5-lab4
