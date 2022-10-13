@@ -12,7 +12,8 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 const renderer = new THREE.WebGLRenderer();
-scene.background = new THREE.Color("#00BCD6");
+const loader = new THREE.TextureLoader();
+scene.background = loader.load("/assets/textures/background.webp");
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 const brickTexture = new THREE.TextureLoader().load(
@@ -34,8 +35,8 @@ scene.add(AmbientLight);
 const controls = new OrbitControls(camera, renderer.domElement);
 
 const addFlower = (x, y, z) => {
-  const gltfLoader = new GLTFLoader();
-  gltfLoader.load("/assets/models/flower/scene.gltf", (gltf) => {
+  const gltfLoaderFlower = new GLTFLoader();
+  gltfLoaderFlower.load("/assets/models/flower/scene.gltf", (gltf) => {
     gltf.scene.scale.set(0.05, 0.05, 0.05);
     y = -2.1;
     gltf.scene.position.set(x, y, z);
@@ -108,7 +109,7 @@ floor.position.y = -2;
 
 scene.add(floor);
 
-const roofGeometry = new THREE.BoxGeometry(0.2, 10, 10);
+const roofGeometry = new THREE.BoxGeometry(0.2, 11, 11);
 const roofMaterial = new THREE.MeshLambertMaterial({ side: THREE.DoubleSide });
 const roof = new THREE.Mesh(roofGeometry, roofMaterial);
 roof.position.z = 5;
@@ -138,12 +139,17 @@ for (let i = 0; i < 200; i++) {
   addFlower(x, -1.1, z);
 }
 
-camera.position.z = 20;
-camera.position.y = 5;
-camera.rotateX(-0.1);
+camera.position.z = 100;
+camera.position.y = 90;
+camera.rotateX(-0.4);
 
 function animate() {
   requestAnimationFrame(animate);
+    if (camera.position.z > 20 && camera.position.y > 1) {
+        camera.position.z -= 0.3;
+        camera.position.y -= 0.3;
+
+    }
 
   renderer.render(scene, camera);
 }
