@@ -28,6 +28,9 @@ const roofTexture = new THREE.TextureLoader().load(
 const doorTexture = new THREE.TextureLoader().load(
   "/assets/textures/door.jpeg"
 );
+const cardTexture = new THREE.TextureLoader().load(
+  "/assets/textures/Senne.jpg"
+);
 
 const AmbientLight = new THREE.AmbientLight(0xffffff, 1.2);
 scene.add(AmbientLight);
@@ -130,6 +133,17 @@ doorMaterial.map = doorTexture;
 door.rotation.y = Math.PI / 2;
 scene.add(door);
 
+const cardGeometry = new THREE.BoxGeometry(0.2, 3, 2);
+const cardMaterial = new THREE.MeshLambertMaterial({
+  side: THREE.DoubleSide,
+});
+const card = new THREE.Mesh(cardGeometry, cardMaterial);
+card.position.x = 3;
+card.position.z = 10;
+card.rotation.y = Math.PI / 2;
+cardMaterial.map = cardTexture;
+scene.add(card);
+
 for (let i = 0; i < 200; i++) {
   //random sign
   let sign = Math.random() < 0.5 ? -1 : 1;
@@ -145,11 +159,10 @@ camera.rotateX(-0.4);
 
 function animate() {
   requestAnimationFrame(animate);
-    if (camera.position.z > 20 && camera.position.y > 1) {
-        camera.position.z -= 0.3;
-        camera.position.y -= 0.3;
-
-    }
+  if (camera.position.z > 20 && camera.position.y > 1) {
+    camera.position.z -= 0.3;
+    camera.position.y -= 0.3;
+  }
 
   renderer.render(scene, camera);
 }
