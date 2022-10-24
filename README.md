@@ -17,3 +17,7 @@ Link to repository: https://github.com/SenneChristiaens/DEV5-myportfolio/tree/ma
 ## Lab 4
 
 Link to repository: https://github.com/SenneChristiaens/DEV5-myportfolio/tree/main/dev5-lab4
+
+## Lab 5
+
+Link to repository: https://github.com/SenneChristiaens/dev5-lab5
