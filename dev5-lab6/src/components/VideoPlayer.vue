@@ -8,7 +8,7 @@ let counter = ref(0);
 let animation = ref("");
 
     onMounted(() => {
-        const apiUrl = "https://app.fakejson.com/q/TeZwQH8p?token=73FoXIjYdlGmhFjaRJSzVA";
+        const apiUrl = "https://app.fakejson.com/q/BFcaN3Ju?token=imUH6_H-w5C2YKbXYsOHVg";
         fetch(apiUrl)
             .then((res) => res.json())
             .then((data) => {

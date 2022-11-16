@@ -22,8 +22,8 @@ import Chat from './components/Chat.vue'
   }
 
   .rightside {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
   }
 </style>
